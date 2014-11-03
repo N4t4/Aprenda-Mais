@@ -53,13 +53,30 @@ class Disciplina_model extends CI_Model{
 
 	public function join($tabela)
 	{
-		switch ($tabela) {
-			case 'usuarios':
-				$this->load->model("usuario_model", "Usuario");
-				$this->Usuario->codigo = $this->codigo_usuario;
-				$this->Usuario->usuario =  $this->Usuario->get();
-			break;
+		$disciplina = $this->get();
+
+		if (isset($tabela['aulas'])) {
+			$this->load->model("Aula_Model", "Aulas");
+			$this->Aulas->codigo_disciplina = $disciplina->codigo;
+			$disciplina->aulas =  $this->Aulas->search();
 		}
+
+		return $disciplina;
+	}
+
+	public function alljoin($tabela)
+	{
+		$disciplinas = $this->search();
+
+		for ($i=0; $i < count($disciplinas) ; $i++) { 
+			if (isset($tabela['aulas'])) {
+				$this->load->model("Aula_Model", "Aulas");
+				$this->Aulas->codigo_disciplina = $disciplinas[$i]->codigo;
+				$disciplinas[$i]->aulas =  $this->Aulas->search();
+			}	
+		}
+
+		return $disciplinas;
 	}
 	
 	public function insert()

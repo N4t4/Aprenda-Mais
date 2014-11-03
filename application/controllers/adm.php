@@ -550,6 +550,21 @@ class Adm extends AP_Controller {
 		$this->load->view('adm/aula/scripts-estudio');		
 	}
 
+	public function aula_desenvolver_save($codigo)
+	{
+		$this->load->model("Aula_Model", "Aula_Editar");
+		
+		echo $this->input->post('aula_conteudo');
+		
+		$this->Aula_Editar->codigo 	 = $codigo;
+		$this->Aula_Editar->conteudo = $this->input->post('aula_conteudo');
+
+		$this->Aula_Editar->update();
+
+	}
+
+
+
 	public function sair()
 	{
 		$this->session->sess_destroy();		

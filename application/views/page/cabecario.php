@@ -1,7 +1,7 @@
 <header id="cabecario">
 	<header class="container">
 		<div class="col-md-8">
-			<span class="ap-logo"></span>
+			<a href="<?php echo site_url(); ?>"><span class="ap-logo"></span></a>
 			<h1>Apreda Mais</h1>
 		</div>
 		<div class="col-md-4">

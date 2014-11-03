@@ -4,13 +4,14 @@
 			<h1><span class="ap-logo"></span> Apreda Mais</h1>
 		</div>
 		<div class="col-md-10">
-			<ul class="nav navbar-nav">
+			<ul class="nav navbar-nav" id="menu-estudio">
 				<li class="active"><a href="#" class="btn-editar" url="<?php echo site_url('/index.php/adm/editar_aula/'.$aula->codigo); ?>">Aula</a></li>
-				<li><a href="#">Telas</a></li>
+				<li><a href="#">Adicionar Tela</a></li>
 				<li><a href="#">Media</a></li>
 				<li><a href="#">Minigame</a></li>
 				<li><a href="#">Exercícios</a></li>
 				<li><a href="#">Modelos da tela</a></li>
+				<li><a href="#" url="<?php echo site_url('index.php/adm/aula_desenvolver_save/'.$aula->codigo) ?>">Salvar</a></li>
 			</ul>
 			<a  class="btn btn-primary pull-right" href="<?php echo site_url('index.php/adm/sair');?>">Sair</a>
 		</div>

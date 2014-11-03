@@ -1,3 +1,4 @@
+<a style="font-size: 32px;" class="navbar-brand" href="<?php echo site_url(); ?>"><span class="ap-logo"></span> <strong style="color: black;">Home</strong></a>
 <div class="col-md-12">
 	<form action="" method="post">
 		<div class="modal-dialog modal-sm" id="box-login">
